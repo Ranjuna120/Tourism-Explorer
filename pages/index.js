@@ -5,29 +5,31 @@ import Image from 'next/image'
 import { useEffect } from 'react'
 
 const featured = [
-  {title:'Sigiriya Rock', location:'Central Province', description:'Ancient rock fortress', image:'https://images.unsplash.com/photo-1505765051273-6d6d4b5b1a3f?auto=format&fit=crop&w=1200&q=80'},
-  {title:'Ella Gap', location:'Uva Province', description:'Scenic mountain views', image:'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80'},
-  {title:'Galle Fort', location:'Southern Province', description:'Historic coastal fort', image:'https://images.unsplash.com/photo-1549887534-0a7ba9b6b7f3?auto=format&fit=crop&w=1200&q=80'}
+  {title:'Sigiriya Rock', location:'Central Province', description:'Ancient rock fortress', image:'/images/beach.png'},
+  {title:'Ella Gap', location:'Uva Province', description:'Scenic mountain views', image:'/images/image2.png'},
+  {title:'Galle Fort', location:'Southern Province', description:'Historic coastal fort', image:'/images/image3.png'}
 ]
 
 export default function Home(){
-  useEffect(()=>{
+  useEffect(() => {
     // simple slider: rotate background images
-    let i=0
-    const el = document.getElementById('hero')
-    if(!el) return
     const imgs = [
-      'https://images.unsplash.com/photo-1505765051273-6d6d4b5b1a3f?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1549887534-0a7ba9b6b7f3?auto=format&fit=crop&w=1600&q=80'
-    ]
-    el.style.backgroundImage = `url(${imgs[0]})`
-    const t = setInterval(()=>{
-      i = (i+1) % imgs.length
-      el.style.backgroundImage = `url(${imgs[i]})`
-    },4000)
-    return ()=> clearInterval(t)
-  },[])
+      '/images/beach.jpg',
+      '/images/image2.jpg',
+      '/images/image3.jpg'
+    ];
+    let i = 0;
+    const el = document.getElementById('hero');
+    if (!el) return;
+    // Preload images for smoother transitions
+    imgs.forEach(src => {
+      const img = new window.Image();
+      img.src = src;
+    });
+    el.style.backgroundImage = '';
+    // Remove slider interval
+    return undefined;
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -76,3 +78,5 @@ export default function Home(){
     </div>
   )
 }
+
+

@@ -30,7 +30,7 @@ export default function Home(){
       <main className="flex-1">
         <section
           id="hero"
-          className="min-h-[60vh] md:min-h-[70vh] flex items-center relative"
+          className="h-screen flex items-center relative"
           style={{
             backgroundImage: `url('${imgs[bgIdx]}')`,
             backgroundSize: 'cover',

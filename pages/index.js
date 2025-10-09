@@ -12,31 +12,36 @@ const featured = [
 
 export default function Home(){
   useEffect(() => {
-    // simple slider: rotate background images
     const imgs = [
-      '/images/beach.jpg',
-      '/images/image2.jpg',
-      '/images/image3.jpg'
+      '/images/beach.png',
+      '/images/image2.png',
+      '/images/image3.png'
     ];
     let i = 0;
     const el = document.getElementById('hero');
     if (!el) return;
-    // Preload images for smoother transitions
+    // Preload images
     imgs.forEach(src => {
       const img = new window.Image();
       img.src = src;
     });
-    el.style.backgroundImage = '';
-    // Remove slider interval
-    return undefined;
+    // Set initial background
+    el.style.backgroundImage = `url('${imgs[0]}')`;
+    // Start slider interval
+    const interval = setInterval(() => {
+      i = (i + 1) % imgs.length;
+      el.style.backgroundImage = `url('${imgs[i]}')`;
+    }, 3500);
+    // Cleanup on unmount
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1">
-        <section id="hero" className="h-[60vh] md:h-[70vh] bg-cover bg-center relative flex items-center">
-          <div className="bg-black/30 absolute inset-0"></div>
+        <section id="hero" className="min-h-[60vh] md:min-h-[70vh] bg-cover bg-center relative flex items-center" style={{backgroundColor:'#222'}}>
+          {/* Remove overlay for better visibility of background images */}
           <div className="relative z-10 max-w-6xl mx-auto px-4 text-center text-white">
             <h1 className="text-3xl md:text-5xl font-extrabold">Explore Sri Lanka's beauty</h1>
             <h2 className="mt-2 text-xl md:text-2xl">Guided tours & adventures</h2>

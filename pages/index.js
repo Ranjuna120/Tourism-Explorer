@@ -43,9 +43,9 @@ export default function Home(){
             <h1 className="text-3xl md:text-5xl font-extrabold">Explore Sri Lanka's beauty</h1>
             <h2 className="mt-2 text-xl md:text-2xl">Guided tours & adventures</h2>
             <p className="mt-4 max-w-2xl mx-auto">Experience the wonder of Sri Lanka with our premium transport services. From airport transfers to guided tours, we make your journey unforgettable.</p>
-            <div className="mt-6 flex justify-center gap-4">
-              <a href="/Destinations" className="btn-primary">Explore Destinations</a>
-              <a href="/contact" className="btn-primary">Contact Us</a>
+            <div className="mt-8 flex justify-center gap-4">
+              <a href="/Destinations" className="btn-primary py-3 px-6 text-lg font-semibold rounded-full shadow-lg bg-white text-blue-700 hover:bg-blue-100 transition">Explore Destinations</a>
+              <a href="/contact" className="btn-primary py-3 px-6 text-lg font-semibold rounded-full shadow-lg bg-blue-700 text-white hover:bg-blue-800 transition">Contact Us</a>
             </div>
           </div>
         </section>

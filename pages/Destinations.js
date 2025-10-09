@@ -3,9 +3,9 @@ import Footer from '../components/Footer'
 import DestinationCard from '../components/DestinationCard'
 
 const places = [
-  {title:'Nuwara Eliya', location:'Central', description:'Hill station with tea plantations', image:''},
-  {title:'Yala National Park', location:'South East', description:'Wildlife and safaris', image:''},
-  {title:'Mirissa Beach', location:'South', description:'Beaches and whale watching', image:''}
+  {title:'Nuwara Eliya', location:'Central', description:'Hill station with tea plantations', image:'/images/beach.png'},
+  {title:'Yala National Park', location:'South East', description:'Wildlife and safaris', image:'/images/image2.png'},
+  {title:'Mirissa Beach', location:'South', description:'Beaches and whale watching', image:'/images/image3.png'}
 ]
 
 export default function Destinations(){

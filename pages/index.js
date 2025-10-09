@@ -39,7 +39,7 @@ export default function Home(){
           }}
         >
           <div className="absolute inset-0 bg-black/30"></div>
-          <div className="relative w-full max-w-6xl mx-auto px-4 text-center text-white">
+          <div className="relative w-full max-w-6xl mx-auto px-4 text-center text-white flex flex-col items-center" style={{paddingTop: '7vh'}}>
             <h1 className="text-3xl md:text-5xl font-extrabold">Explore Sri Lanka's beauty</h1>
             <h2 className="mt-2 text-xl md:text-2xl">Guided tours & adventures</h2>
             <p className="mt-4 max-w-2xl mx-auto">Experience the wonder of Sri Lanka with our premium transport services. From airport transfers to guided tours, we make your journey unforgettable.</p>
@@ -50,22 +50,32 @@ export default function Home(){
           </div>
         </section>
 
-        <section className="max-w-6xl mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-white p-6 rounded shadow text-center">
-              <div className="text-3xl font-bold">24/7</div>
-              <div className="mt-2 text-sm">Available Service</div>
+        {/* Frosted glass cards overlay on hero image */}
+        <div className="absolute left-1/2 bottom-12 transform -translate-x-1/2 z-20 w-full max-w-3xl px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="backdrop-blur bg-white/30 border border-white/40 p-6 rounded-xl shadow-lg text-center text-white">
+              <div className="flex flex-col items-center">
+                <svg className="w-8 h-8 mb-2" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" /></svg>
+                <div className="text-2xl font-bold">24/7</div>
+                <div className="mt-1 text-sm">Available Service</div>
+              </div>
             </div>
-            <div className="bg-white p-6 rounded shadow text-center">
-              <div className="text-3xl font-bold">5+ Years</div>
-              <div className="mt-2 text-sm">Experience</div>
+            <div className="backdrop-blur bg-white/30 border border-white/40 p-6 rounded-xl shadow-lg text-center text-white">
+              <div className="flex flex-col items-center">
+                <svg className="w-8 h-8 mb-2" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12a7.5 7.5 0 11-15 0 7.5 7.5 0 0115 0z" /></svg>
+                <div className="text-2xl font-bold">5+ Years</div>
+                <div className="mt-1 text-sm">Experience</div>
+              </div>
             </div>
-            <div className="bg-white p-6 rounded shadow text-center">
-              <div className="text-3xl font-bold">Island Wide</div>
-              <div className="mt-2 text-sm">Coverage</div>
+            <div className="backdrop-blur bg-white/30 border border-white/40 p-6 rounded-xl shadow-lg text-center text-white">
+              <div className="flex flex-col items-center">
+                <svg className="w-8 h-8 mb-2" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 2a10 10 0 100 20 10 10 0 000-20z" /></svg>
+                <div className="text-2xl font-bold">Island Wide</div>
+                <div className="mt-1 text-sm">Coverage</div>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
 
         <section className="max-w-6xl mx-auto px-4 py-8">
           <h3 className="text-2xl font-bold mb-4">Featured Destinations</h3>

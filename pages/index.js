@@ -2,7 +2,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import DestinationCard from '../components/DestinationCard'
 import Image from 'next/image'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 const featured = [
   {title:'Sigiriya Rock', location:'Central Province', description:'Ancient rock fortress', image:'/images/beach.png'},
@@ -11,28 +11,16 @@ const featured = [
 ]
 
 export default function Home(){
+  const imgs = [
+    '/images/beach.png',
+    '/images/image2.png',
+    '/images/image3.png'
+  ];
+  const [bgIdx, setBgIdx] = useState(0);
   useEffect(() => {
-    const imgs = [
-      '/images/beach.png',
-      '/images/image2.png',
-      '/images/image3.png'
-    ];
-    let i = 0;
-    const el = document.getElementById('hero');
-    if (!el) return;
-    // Preload images
-    imgs.forEach(src => {
-      const img = new window.Image();
-      img.src = src;
-    });
-    // Set initial background
-    el.style.backgroundImage = `url('${imgs[0]}')`;
-    // Start slider interval
     const interval = setInterval(() => {
-      i = (i + 1) % imgs.length;
-      el.style.backgroundImage = `url('${imgs[i]}')`;
+      setBgIdx(idx => (idx + 1) % imgs.length);
     }, 3500);
-    // Cleanup on unmount
     return () => clearInterval(interval);
   }, []);
 
@@ -40,9 +28,18 @@ export default function Home(){
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1">
-        <section id="hero" className="min-h-[60vh] md:min-h-[70vh] bg-cover bg-center relative flex items-center" style={{backgroundColor:'#222'}}>
-          {/* Remove overlay for better visibility of background images */}
-          <div className="relative z-10 max-w-6xl mx-auto px-4 text-center text-white">
+        <section
+          id="hero"
+          className="min-h-[60vh] md:min-h-[70vh] flex items-center"
+          style={{
+            backgroundImage: `url('${imgs[bgIdx]}')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundColor: '#222',
+            transition: 'background-image 0.8s ease'
+          }}
+        >
+          <div className="w-full max-w-6xl mx-auto px-4 text-center text-white">
             <h1 className="text-3xl md:text-5xl font-extrabold">Explore Sri Lanka's beauty</h1>
             <h2 className="mt-2 text-xl md:text-2xl">Guided tours & adventures</h2>
             <p className="mt-4 max-w-2xl mx-auto">Experience the wonder of Sri Lanka with our premium transport services. From airport transfers to guided tours, we make your journey unforgettable.</p>

@@ -40,7 +40,7 @@ export default function Home(){
         >
           <div className="absolute inset-0 bg-black/30"></div>
           <div className="relative w-full max-w-6xl mx-auto px-4 text-center text-white flex flex-col items-center" style={{paddingTop: '4vh'}}>
-            <h1 className="text-3xl md:text-5xl font-extrabold mb-2" style={{marginTop: 0}}>Explore Sri Lanka's beauty</h1>
+            <h1 className="text-3xl md:text-5xl font-extrabold mb-2" style={{marginTop: -200}}>Explore Sri Lanka's beauty</h1>
             <h2 className="text-xl md:text-2xl mb-2">Guided tours & adventures</h2>
             <p className="max-w-2xl mx-auto mb-4">Experience the wonder of Sri Lanka with our premium transport services. From airport transfers to guided tours, we make your journey unforgettable.</p>
             <div className="mt-8 flex justify-center gap-4">

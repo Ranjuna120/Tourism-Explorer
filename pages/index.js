@@ -30,16 +30,16 @@ export default function Home(){
       <main className="flex-1">
         <section
           id="hero"
-          className="min-h-[60vh] md:min-h-[70vh] flex items-center"
+          className="min-h-[60vh] md:min-h-[70vh] flex items-center relative"
           style={{
             backgroundImage: `url('${imgs[bgIdx]}')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundColor: '#222',
             transition: 'background-image 0.8s ease'
           }}
         >
-          <div className="w-full max-w-6xl mx-auto px-4 text-center text-white">
+          <div className="absolute inset-0 bg-black/30"></div>
+          <div className="relative w-full max-w-6xl mx-auto px-4 text-center text-white">
             <h1 className="text-3xl md:text-5xl font-extrabold">Explore Sri Lanka's beauty</h1>
             <h2 className="mt-2 text-xl md:text-2xl">Guided tours & adventures</h2>
             <p className="mt-4 max-w-2xl mx-auto">Experience the wonder of Sri Lanka with our premium transport services. From airport transfers to guided tours, we make your journey unforgettable.</p>

@@ -5,6 +5,9 @@ import Image from 'next/image'
 const imgs = [
   { src: '/images/beach.png', caption: 'Sigiriya Rock' },
   { src: '/images/image2.png', caption: 'Ella Gap' },
+  { src: '/images/image3.png', caption: 'Galle Fort' },
+  { src: '/images/beach.png', caption: 'Sigiriya Rock' },
+  { src: '/images/image2.png', caption: 'Ella Gap' },
   { src: '/images/image3.png', caption: 'Galle Fort' }
 ]
 

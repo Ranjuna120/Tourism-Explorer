@@ -20,7 +20,7 @@ export default function Gallery(){
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {imgs.map((img,i)=> (
             <div key={i} className="bg-white rounded-lg shadow p-4 flex flex-col items-center">
-              <div className="w-full h-96 relative rounded overflow-hidden mb-2">
+              <div className="w-[400px] h-96 relative rounded overflow-hidden mb-2">
                 <Image src={img.src} alt={img.caption} fill className="object-cover rounded" />
               </div>
               <div className="font-semibold text-gray-700">{img.caption}</div>

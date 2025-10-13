@@ -17,13 +17,13 @@ export default function Gallery(){
       <Navbar />
       <main className="flex-1 max-w-6xl mx-auto px-4 py-12">
         <h1 className="text-3xl font-bold mb-6">Gallery</h1>
-  <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {imgs.map((img,i)=> (
-            <div key={i} className="bg-white rounded-lg shadow p-4 flex flex-col items-center">
-              <div className="w-[400px] h-96 relative rounded overflow-hidden mb-2">
-                <Image src={img.src} alt={img.caption} fill className="object-cover rounded" />
+            <div key={i} className="bg-white rounded-lg shadow flex flex-col items-center">
+              <div className="w-full aspect-[3/4] relative rounded-t-lg overflow-hidden">
+                <Image src={img.src} alt={img.caption} fill className="object-cover rounded-t-lg" />
               </div>
-              <div className="font-semibold text-gray-700">{img.caption}</div>
+              <div className="font-semibold text-gray-700 py-3 w-full text-center border-t">{img.caption}</div>
             </div>
           ))}
         </div>
